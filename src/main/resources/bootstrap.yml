@@ -1,0 +1,11 @@
+spring:
+  application:
+           name: cicd
+  cloud:
+    config:
+         uri: http://${CONFIG_SERVER_HOST:localhost}:8881
+         failFast: true
+         retry:
+            maxAttempts: 30
+            multiplier: 5
+            maxInterval: 20000
